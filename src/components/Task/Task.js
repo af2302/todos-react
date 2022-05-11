@@ -6,7 +6,7 @@ const Task = () => {
         <div className="view">
           <input className="toggle" type="checkbox"/>
           <label>
-            <span className="title">title</span>
+            <span className="title">task</span>
             <span className="created">created 1s ago</span>
           </label>
           <button className="icon icon-edit" type="button" aria-label="Icon input edit"/>
