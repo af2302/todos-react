@@ -1,11 +1,17 @@
 import React from "react";
+import './App.css'
+
 import NewTaskForm from "../NewTaskForm/NewTaskForm";
 import Footer from "../Footer/Footer";
-import Task from "../Task/Task";
 import TaskList from "../TaskList/TaskList"
-import TaskFilter from "../TaskFilter/TaskFilter"
 
 const App =() => { 
+  const todoData = [
+    {label: 'driink coffee', important : false,id : 1 },
+    {label: 'create app', important : true, id : 2},
+    {label: 'havea lunch', important: false, id : 3}
+  ];
+
 return (
     <section className="todoapp">
       <header className="header">
@@ -13,7 +19,7 @@ return (
         <NewTaskForm />
       </header>
       <section className="main">
-        <TaskList />
+        <TaskList todos={todoData}/>
         <Footer />
       </section>
     </section>

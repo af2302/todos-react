@@ -1,21 +1,20 @@
 import React from "react";
+import './Task.css'
 
-const Task = () => {
+const Task = ({label, important = false}) => {
+  const style = {
+    color: important ? 'tomato' : 'black'
+  };
     return (
         <li>
         <div className="view">
-          <input className="toggle" type="checkbox"/>
           <label>
-            <span className="title">task</span>
-            <span className="created">created 1s ago</span>
+            <span className="title" style={style}>{label}</span>
           </label>
           <button className="icon icon-edit" type="button" aria-label="Icon input edit"/>
           <button className="icon icon-destroy" type="button" aria-label="Icon input deleted"/>
         </div>
-        <input
-          type="text"
-          className="edit"
-        />
+
       </li>
     );
 }
