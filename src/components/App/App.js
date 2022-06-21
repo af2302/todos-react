@@ -8,7 +8,6 @@ import Footer from '../Footer/Footer';
 export default class App extends Component {
   state = {
     todoData: JSON.parse(localStorage.getItem('todoData')) || [],
-
     filter: JSON.parse(localStorage.getItem('filter')) || 'all', // all, active, !completed
   };
 
