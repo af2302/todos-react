@@ -21,10 +21,10 @@
     "plugins": ["react", "prettier", "import"],
     "rules": {
       "indent": ["error", 2],
-      "prettier/prettier": "error",
+      "prettier/prettier": 0,
       "linebreak-style": [0, "unix"],
       "quotes": ["error", "single"],
-      "semi": ["error", "never"],
+      "semi": 0,
       "react/react-in-jsx-scope": "off",
       "react/prop-types": 0,
       "import/no-unresolved": [2, { "caseSensitive": false }],

@@ -2,6 +2,7 @@ import './Task.css';
 import React, { Component } from 'react';
 import { formatDistanceToNow } from 'date-fns';
 import PropTypes from 'prop-types';
+
 import Timer from '../Timer/Timer';
 
 export default class Task extends Component {
@@ -78,13 +79,7 @@ export default class Task extends Component {
           <button className="icon icon-edit" type="button" aria-label="Icon input edit" onClick={onToggleEdit} />
           <button className="icon icon-destroy" type="button" aria-label="Icon input deleted" onClick={onDeleted} />
         </div>
-        <input
-          type="text"
-          className="edit"
-          defaultValue={label}
-          onBlur={this.handleChange}
-          onKeyPress={this.handleChangeKey}
-        />
+        <input type="text" className="edit" defaultValue={label} onBlur={this.handleChange} onKeyPress={this.handleChangeKey} />
       </li>
     );
   }

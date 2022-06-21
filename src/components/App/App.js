@@ -70,39 +70,33 @@ export default class App extends Component {
       };
     });
   };
-
   // изменяет значение свойства filter
   onFilterChange = (filterName) => {
     this.setState({ filter: filterName });
   };
-
   // удаляет все выполненные tasks
   clearCompleted = () => {
     this.setState(({ todoData }) => ({
       todoData: [...todoData].filter((item) => !item.completed),
     }));
   };
-
   filters = (arr, filter) => {
     switch (filter) {
-      case 'all':
-        return arr;
-      case 'completed':
-        return arr.filter((item) => item.completed);
-      case 'active':
-        return arr.filter((item) => !item.completed);
-      default:
-        return arr;
+    case 'all':
+      return arr;
+    case 'completed':
+      return arr.filter((item) => item.completed);
+    case 'active':
+      return arr.filter((item) => !item.completed);
+    default:
+      return arr;
     }
   };
-
   // eslint-disable-next-line no-unused-vars
   changeTimer = (id, updatTimerData) => {
     this.setState(({ todoData }) => {
       const newArr = [...todoData];
-
       const ind = newArr.findIndex((el) => el.id === id);
-
       newArr[ind].timerData = updatTimerData;
       // console.log(newArr[ind].timerData)
       return {
@@ -112,11 +106,9 @@ export default class App extends Component {
     // eslint-disable-next-line react/destructuring-assignment
     // console.log(this.state.todoData)
   };
-
   // создает новый элемент списка
   createTodoItem(label) {
     const str = String(new Date());
-
     return {
       label,
       completed: false,
@@ -131,18 +123,14 @@ export default class App extends Component {
       },
     };
   }
-
   render() {
     // console.log(this.state.filter)
     // console.log(this.state.todoData)
     const { todoData, filter } = this.state;
-
     // счетчик невыполненных задач
     const tasksLeftCount = todoData.filter((el) => !el.completed).length;
-
     // отфильтрованные элементы
     const filtersItems = this.filters(todoData, filter);
-
     // изменяет localStorage
     localStorage.setItem('todoData', JSON.stringify(todoData));
     localStorage.setItem('filter', JSON.stringify(filter));
