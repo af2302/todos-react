@@ -21,7 +21,11 @@ export default class NewTaskForm extends Component {
     const { onItemAdded } = this.props;
     const { label } = this.state;
 
+
     event.preventDefault();
+    if (label.trim().length == 0 ){
+      return alert('type smth')
+    }
     onItemAdded(label);
     this.setState({
       label: '',
