@@ -44,3 +44,4 @@ export default class NewTaskForm extends Component {
     );
   }
 }
+
