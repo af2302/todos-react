@@ -23,7 +23,7 @@ export default class NewTaskForm extends Component {
 
 
     event.preventDefault();
-    if (label.trim().length == 0 ){
+    if (label.trim().length == 0) {
       return alert('type smth')
     }
     onItemAdded(label);
