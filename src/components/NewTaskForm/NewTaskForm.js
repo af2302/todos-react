@@ -38,8 +38,6 @@ export default class NewTaskForm extends Component {
     return (
       <form onSubmit={this.onSubmit} className="new-todo-form">
         <input className="new-todo" placeholder="What needs to be done?" onChange={this.onLabelChange} value={label} />
-        {/* <input className="new-todo-form__timer" placeholder="Min"/>
-        <input className="new-todo-form__timer" placeholder="Sec"/> */}
       </form>
     );
   }

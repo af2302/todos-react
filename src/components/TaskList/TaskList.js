@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import Task from '../Task/Task';
 
 const TaskList = ({ todos, onDeleted, onToggleDone, onToggleEdit, addEditedItem, changeTimer }) => {
-  // console.log(TaskList.defaultProps)
 
   const elements = todos.map((item, i) => {
     const { id } = item;
