@@ -102,7 +102,7 @@ const App = () => {
     <section className="todoapp">
       <header className="header">
         <h1>todos</h1>
-        <NewTaskForm onItemAdded={addItem} />
+        <NewTaskForm onSubmit={addItem} />
       </header>
       <section className="main">
         <TaskList
@@ -124,6 +124,5 @@ const App = () => {
     </section>
   );
 }
-
 
 export default App;
