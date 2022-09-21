@@ -1,46 +1,30 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import './NewTaskForm.css';
-import PropTypes from 'prop-types';
 
-export default class NewTaskForm extends Component {
-  static propTypes = {
-    onItemAdded: PropTypes.func.isRequired,
+
+
+const NewTaskForm = (props) => {
+  const [label , setLabel] = useState('');
+
+  const onLabelChange = (event) => {
+    setLabel(event.target.value)
   };
 
-  state = {
-    label: '',
-  };
-
-  onLabelChange = (event) => {
-    this.setState({
-      label: event.target.value,
-    });
-  };
-
-  onSubmit = (event) => {
-    const { onItemAdded } = this.props;
-    const { label } = this.state;
-
-
-    event.preventDefault();
+  const onSubmit = (event) => {
     if (label.trim().length == 0) {
       return alert('type smth')
     }
-    onItemAdded(label);
-    this.setState({
-      label: '',
-    });
+    event.preventDefault();
+
+    props.onSubmit(label);
+    setLabel('');
   };
 
-  render() {
-    const { label } = this.state;
-
-    return (
-      <form onSubmit={this.onSubmit} className="new-todo-form">
-        <input className="new-todo" placeholder="What needs to be done?" onChange={this.onLabelChange} value={label} />
-        {/* <input className="new-todo-form__timer" placeholder="Min"/>
-        <input className="new-todo-form__timer" placeholder="Sec"/> */}
-      </form>
-    );
-  }
+  return (
+    <form onSubmit={onSubmit} className="new-todo-form">
+      <input className="new-todo" placeholder="What needs to be done?" onChange={onLabelChange} value={label} />
+    </form>
+  )
 }
+
+export default NewTaskForm;
