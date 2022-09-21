@@ -70,7 +70,7 @@ export default class Task extends Component {
     return (
       <li className={className}>
         <div className="view">
-          <input className="toggle" type="checkbox" checked={!!completed} onChange={onToggleDone} />
+          <input className='toggle' type="checkbox" checked={!!completed} onChange={onToggleDone} />
           <label>
             <span className="title">{label}</span>
             <Timer changeTimer={changeTimer} timerData={timerData} id={id} />
